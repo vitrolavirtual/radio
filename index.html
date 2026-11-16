@@ -110,6 +110,8 @@
     .player-card h2 { margin: 0 0 .7rem; font-size: 1.15rem; font-weight: 600; }
     /* O contêiner só limita a largura; o CSS do player da FastCast4u não é alterado */
     .player-slot { min-height: 96px; max-width: 100%; overflow-x: auto; }
+    .now { margin: .8rem 0 0; padding-top: .8rem; border-top: 1px solid rgba(42,42,44,.15); font-size: .98rem; font-weight: 500; overflow-wrap: anywhere; }
+    .now .cc_streaminfo { font-weight: 600; color: var(--plum); }
 
     .art { position: relative; display: none; }
     .art img {
@@ -227,9 +229,14 @@
             <h2>Ouça agora</h2>
             <div class="player-slot">
               <div class="cc_player" data-username="vitrolavirtual">Carregando ...</div>
+              <!-- Música atual (FastCast4u) -->
+              <p class="now">Tocando agora: <span class="cc_streaminfo" data-type="song" data-username="vitrolavirtual">Carregando ...</span></p>
               <!-- O script vem depois do elemento do player, garantindo que ele já exista na página -->
               <script language="javascript" type="text/javascript" src="https://usa3.fastcast4u.com:2199/system/player.js"></script>
             </div>
+
+            <!-- Música atual (FastCast4u streaminfo): o script vem depois do elemento -->
+            <script language="javascript" type="text/javascript" src="https://usa3.fastcast4u.com:2199/system/streaminfo.js"></script>
           </div>
         </div>
 
